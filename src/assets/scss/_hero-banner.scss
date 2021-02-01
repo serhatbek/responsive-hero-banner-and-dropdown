@@ -1,0 +1,24 @@
+.hero {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  @include flexCenter;
+  position: relative;
+
+  &-cta {
+    width: 38%;
+    text-align: center;
+    position: absolute;
+
+    &__dec {
+      span {
+        display: block;
+      }
+    }
+
+    &__btn {
+      display: block;
+      color: #000;
+    }
+  }
+}

@@ -1,14 +1,16 @@
 header {
-  height: 90px;
-  padding: 0.5rem 0;
+  width: 100%;
+  position: fixed;
+  z-index: 22;
 
   .container {
     @include flexSpaceBetween;
+    padding: 1.5rem 0;
   }
 
   .logo {
     width: 100px;
-    height: 80px;
+    height: auto;
     @include flexCenter;
 
     img {
@@ -22,6 +24,11 @@ header {
 
     &__item {
       margin-right: 3rem;
+
+      &-link {
+        font-weight: 700;
+        color: #3e4024;
+      }
     }
   }
 }
