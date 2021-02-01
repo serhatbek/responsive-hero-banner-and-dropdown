@@ -1,0 +1,27 @@
+header {
+  height: 90px;
+  padding: 0.5rem 0;
+
+  .container {
+    @include flexSpaceBetween;
+  }
+
+  .logo {
+    width: 100px;
+    height: 80px;
+    @include flexCenter;
+
+    img {
+      width: 100%;
+      color: #fff;
+    }
+  }
+
+  .main-nav {
+    @include flexCenter;
+
+    &__item {
+      margin-right: 3rem;
+    }
+  }
+}
