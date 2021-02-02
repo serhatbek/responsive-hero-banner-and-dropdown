@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Responsive Banner/Hero Images And Dropdown</title>
+  <script src="https://kit.fontawesome.com/f0d4beef0b.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="./src/assets/css/main.css">
 </head>
 
@@ -12,15 +13,41 @@
   <header>
     <div class="container">
       <div class="logo">
-        <h1><img src="./src/assets/images/logo.svg" alt="Mountain Site Logo"></h1>
+        <h1>
+          <a href="./index.html">
+            <img src="./src/assets/images/logo.svg" alt="Mountain Site Logo">
+            Mountain
+          </a>
+        </h1>
       </div>
 
       <nav>
         <ul class="main-nav">
-          <li class="main-nav__item"><a class="main-nav__item-link" href="./index.html">HOME</a></li>
-          <li class="main-nav__item"><a class="main-nav__item-link" href="#">ABOUT</a></li>
-          <li class="main-nav__item"><a class="main-nav__item-link" href="#">SERVICES</a></li>
-          <li class="main-nav__item"><a class="main-nav__item-link" href="#">CONTACT</a></li>
+          <li class="main-nav__item"><a class="main-nav__item-link" href="./index.html"><i class="fas fa-home"></i>
+              HOME</a></li>
+          <li class="main-nav__item"><a class="main-nav__item-link" href="#"><i class="fas fa-user"></i> ABOUT</a></li>
+          <li class="main-nav__item dropdown-btn"><a class="main-nav__item-link" href="#"><i class="fas fa-clone"></i>
+              SERVICES <i class="fas fa-caret-down"></i></a>
+            <div class="dropdown">
+              <ul class="main-nav__dropdown">
+                <li class="main-nav__dropdown-item"><a class="main-nav__dropdown-item-link" href="#">MISSION</a></li>
+                <li class="main-nav__dropdown-item dropdown-btn2"><a class="main-nav__dropdown-item-link"
+                    href="#">VISION <i class="fas fa-caret-right"></i></a>
+                  <div class="sub-dropdown">
+                    <ul class="main-nav__dropdown">
+                      <li class="main-nav__dropdown-item"><a class="main-nav__dropdown-item-link" href="#">NATURE</a>
+                      </li>
+                      <li class="main-nav__dropdown-item"><a class="main-nav__dropdown-item-link" href="#">VISION</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="main-nav__dropdown-item"><a class="main-nav__dropdown-item-link" href="#">TEAM</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="main-nav__item"><a class="main-nav__item-link" href="#"><i class="fas fa-phone-alt"></i>
+              CONTACT</a></li>
         </ul>
       </nav>
     </div>
@@ -28,16 +55,16 @@
 
   <section role="banner" class="hero">
     <picture>
-      <source sizes="1200px" srcset="./src/assets/images/lake-xlg.jpg" media="(min-width:1200px)">
-      <source sizes="700px" srcset="./src/assets/images/lake-xlg.jpg" media="(min-width:700px)">
-      <img src="./src/assets/images/lake-small.jpg" alt="Lake in the forest.">
+      <source sizes="1200px" srcset="./src/assets/images/lake-xl.jpg" media="(min-width:1200px)">
+      <source sizes="700px" srcset="./src/assets/images/lake-lg.jpg" media="(min-width:700px)">
+      <img src="./src/assets/images/lake-sm.png" alt="Lake in the forest.">
     </picture>
     <div class="hero-cta">
       <h2 class="hero-cta__title">BUSINESS SOLUTIONS</h2>
-      <p class="hero-cta__desc">Aria is a top consultancy company specializing in business growth using <span>online
-          marketing
-          and conversion optimization tactics</span></p>
-      <a role="button" class="hero-cta__btn">Discover</a>
+      <p class="hero-cta__desc">Aria is a top consultancy company specializing in business growth using
+        <span>online marketing and conversion optimization tactics</span>
+      </p>
+      <a role="button" class="hero-cta__btn">DISCOVER</a>
     </div>
   </section>
 

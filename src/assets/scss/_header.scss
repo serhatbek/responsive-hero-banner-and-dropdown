@@ -9,13 +9,25 @@ header {
   }
 
   .logo {
-    width: 100px;
-    height: auto;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    padding: 1rem;
+    background: #b4a43c;
     @include flexCenter;
+    margin-left: 1rem;
+
+    h1 {
+      font-size: 1.1rem;
+
+      a {
+        color: black;
+      }
+    }
 
     img {
       width: 100%;
-      color: #fff;
+      color: #eee1d8;
     }
   }
 
@@ -24,10 +36,67 @@ header {
 
     &__item {
       margin-right: 3rem;
+      height: 2.4rem;
+      transition: 0.2s ease-in-out;
+
+      &:first-of-type,
+      &:first-of-type:hover {
+        border-bottom: 2px solid #3e4024;
+      }
+
+      &:hover {
+        border-bottom: 2px solid#b4a43c;
+      }
 
       &-link {
         font-weight: 700;
         color: #3e4024;
+      }
+    }
+
+    &__dropdown.js-dropdown {
+      display: block;
+    }
+
+    &__dropdown {
+      display: none;
+      padding: 0.6rem 0;
+      background-color: #3e4024;
+      border-radius: 0.4rem;
+
+      &-item {
+        margin: 0.8rem 0;
+
+        &:hover {
+          background-color: #b4a43c;
+        }
+      }
+
+      &-item:nth-of-type(2) a {
+        @include flexSpaceBetween;
+      }
+
+      &-item-link {
+        font-size: 1.2rem;
+        color: #eee1d8;
+        font-weight: 700;
+        margin: 0 1rem;
+      }
+
+      &-item:nth-of-type(2) {
+        position: relative;
+
+        .sub-dropdown {
+          display: none;
+        }
+
+        .sub-dropdown.js-sub-dropdown {
+          display: block;
+          width: 10rem;
+          position: absolute;
+          left: 12rem;
+          top: 0;
+        }
       }
     }
   }

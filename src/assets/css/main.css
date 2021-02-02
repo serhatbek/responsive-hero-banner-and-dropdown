@@ -14,11 +14,12 @@ html {
 body {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.6rem;
-  line-height: 1;
+  line-height: 1.5;
 }
 
 a {
   text-decoration: none;
+  box-sizing: border-box;
 }
 
 ul {
@@ -46,16 +47,28 @@ header .container {
 }
 
 header .logo {
-  width: 100px;
-  height: auto;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  padding: 1rem;
+  background: #b4a43c;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left: 1rem;
+}
+
+header .logo h1 {
+  font-size: 1.1rem;
+}
+
+header .logo h1 a {
+  color: black;
 }
 
 header .logo img {
   width: 100%;
-  color: #fff;
+  color: #eee1d8;
 }
 
 header .main-nav {
@@ -66,11 +79,69 @@ header .main-nav {
 
 header .main-nav__item {
   margin-right: 3rem;
+  height: 2.4rem;
+  transition: 0.2s ease-in-out;
+}
+
+header .main-nav__item:first-of-type, header .main-nav__item:first-of-type:hover {
+  border-bottom: 2px solid #3e4024;
+}
+
+header .main-nav__item:hover {
+  border-bottom: 2px solid #b4a43c;
 }
 
 header .main-nav__item-link {
   font-weight: 700;
   color: #3e4024;
+}
+
+header .main-nav__dropdown.js-dropdown {
+  display: block;
+}
+
+header .main-nav__dropdown {
+  display: none;
+  padding: 0.6rem 0;
+  background-color: #3e4024;
+  border-radius: 0.4rem;
+}
+
+header .main-nav__dropdown-item {
+  margin: 0.8rem 0;
+}
+
+header .main-nav__dropdown-item:hover {
+  background-color: #b4a43c;
+}
+
+header .main-nav__dropdown-item:nth-of-type(2) a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .main-nav__dropdown-item-link {
+  font-size: 1.2rem;
+  color: #eee1d8;
+  font-weight: 700;
+  margin: 0 1rem;
+}
+
+header .main-nav__dropdown-item:nth-of-type(2) {
+  position: relative;
+}
+
+header .main-nav__dropdown-item:nth-of-type(2) .sub-dropdown {
+  display: none;
+}
+
+header .main-nav__dropdown-item:nth-of-type(2) .sub-dropdown.js-sub-dropdown {
+  display: block;
+  width: 10rem;
+  position: absolute;
+  left: 12rem;
+  top: 0;
 }
 
 .hero {
@@ -84,16 +155,46 @@ header .main-nav__item-link {
 }
 
 .hero-cta {
-  width: 38%;
+  width: 60%;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #eee1d8;
   position: absolute;
 }
 
-.hero-cta__dec span {
+.hero-cta__title {
+  font-size: 5.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.hero-cta__desc {
+  font-size: 1.8rem;
+  margin-bottom: 3.2rem;
+}
+
+.hero-cta__desc span {
   display: block;
 }
 
 .hero-cta__btn {
+  font-size: 1.2rem;
   display: block;
-  color: #000;
+  height: 5rem;
+  width: 14rem;
+  font-weight: 700;
+  color: #fff;
+  padding: 1.6rem 3.4rem;
+  background-color: #b4a43c;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.hero-cta__btn:hover {
+  background-color: transparent;
+  border: 2px solid #b4a43c;
+  border-radius: 0.4rem;
 }

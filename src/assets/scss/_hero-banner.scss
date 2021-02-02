@@ -6,19 +6,45 @@
   position: relative;
 
   &-cta {
-    width: 38%;
+    width: 60%;
     text-align: center;
+    @include flexColCenter;
+    color: #eee1d8;
     position: absolute;
 
-    &__dec {
+    &__title {
+      font-size: 5.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    &__desc {
+      font-size: 1.8rem;
+      margin-bottom: 3.2rem;
+
       span {
         display: block;
       }
     }
 
     &__btn {
+      font-size: 1.2rem;
       display: block;
-      color: #000;
+      height: 5rem;
+      width: 14rem;
+      font-weight: 700;
+      color: #fff;
+      padding: 1.6rem 3.4rem;
+      background-color: #b4a43c;
+      border-radius: 0.4rem;
+      cursor: pointer;
+      transition: 0.3s ease-in-out;
+
+      &:hover {
+        background-color: transparent;
+        border: 2px solid #b4a43c;
+        border-radius: 0.4rem;
+      }
     }
   }
 }
