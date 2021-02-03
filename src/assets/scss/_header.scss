@@ -1,11 +1,28 @@
 header {
   width: 100%;
   position: fixed;
+  transition: 0.4s 0.4s cubic-bezier(0.32, 1.74, 1, 0.52);
   z-index: 22;
+
+  @include media(atMedium) {
+    top: -650px;
+    left: 0;
+    right: 0;
+    background-color: #3e4024;
+    // height: 35%;
+  }
+
+  &.navCollapse {
+    top: 0;
+  }
 
   .container {
     @include flexSpaceBetween;
     padding: 1.5rem 0;
+
+    @include media(atMedium) {
+      @include flexColCenter;
+    }
   }
 
   .logo {
@@ -20,6 +37,10 @@ header {
     h1 {
       font-size: 1.1rem;
 
+      @include media(atSmall) {
+        font-size: 0.8rem;
+      }
+
       a {
         color: black;
       }
@@ -29,15 +50,37 @@ header {
       width: 100%;
       color: #eee1d8;
     }
+
+    @include media(atMedium) {
+      position: absolute;
+      top: 1.5rem;
+      left: 1rem;
+    }
+
+    @include media(atSmall) {
+      width: 6rem;
+      height: 6rem;
+    }
   }
 
   .main-nav {
     @include flexCenter;
 
+    @include media(atMedium) {
+      @include flexColCenter;
+      color: #eee1d8;
+      margin-top: 7rem;
+    }
+
     &__item {
       margin-right: 3rem;
       height: 2.4rem;
       transition: 0.2s ease-in-out;
+
+      @include media(atMedium) {
+        margin-right: 0;
+        margin-bottom: 2rem;
+      }
 
       &:first-of-type,
       &:first-of-type:hover {
@@ -51,18 +94,31 @@ header {
       &-link {
         font-weight: 700;
         color: #3e4024;
+
+        @include media(atMedium) {
+          color: #eee1d8;
+        }
       }
     }
 
+    .dropdown {
+      position: relative;
+    }
+
     &__dropdown.js-dropdown {
-      display: block;
+      display: none;
     }
 
     &__dropdown {
-      display: none;
+      display: block;
       padding: 0.6rem 0;
       background-color: #3e4024;
       border-radius: 0.4rem;
+
+      @include media(atMedium) {
+        background-color: #222729;
+        width: 100%;
+      }
 
       &-item {
         margin: 0.8rem 0;
@@ -97,6 +153,46 @@ header {
           left: 12rem;
           top: 0;
         }
+      }
+    }
+  }
+
+  .hamburger-menu {
+    display: none;
+
+    @include media(atMedium) {
+      display: block;
+      width: 3.8rem;
+      height: 3rem;
+      position: fixed;
+      top: 3rem;
+      right: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      z-index: 33;
+
+      .top-line,
+      .middle-line,
+      .bottom-line {
+        height: 0.3rem;
+        width: 100%;
+        background: #fff;
+        transition: 0.2s ease-in;
+      }
+
+      &.open .top-line {
+        transform-origin: left;
+        transform: rotate(45deg);
+      }
+
+      &.open .middle-line {
+        visibility: hidden;
+      }
+
+      &.open .bottom-line {
+        transform-origin: left;
+        transform: rotate(-405deg);
       }
     }
   }

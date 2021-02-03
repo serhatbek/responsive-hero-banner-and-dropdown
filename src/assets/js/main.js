@@ -15,3 +15,15 @@ subDropdownLink.addEventListener('click', (e) => {
   subDropdown.classList.toggle('js-sub-dropdown');
   console.log('subdrop');
 });
+
+// Hamburger Menu & Nav Collapse
+
+const burgerMenu = document.querySelector('.hamburger-menu');
+const navCollapse = document.querySelector('header');
+
+burgerMenu.addEventListener('click', openNav);
+
+function openNav() {
+  burgerMenu.classList.toggle('open');
+  navCollapse.classList.toggle('navCollapse');
+}
